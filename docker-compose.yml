@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: coldchain-server
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+    volumes:
+      - ./data:/app/data
+      - ./telemetry.db:/app/telemetry.db
+    restart: unless-stopped
+    networks:
+      - coldchain-net
+
+networks:
+  coldchain-net:
+    driver: bridge

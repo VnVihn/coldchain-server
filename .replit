@@ -1,0 +1,6 @@
+run = "npm install && node server.js"
+entrypoint = "server.js"
+
+[env]
+PORT = "3000"
+NODE_ENV = "production"
