@@ -1,4 +1,4 @@
-run = "npm install && node server.js"
+run = "npm ci && node server.js"
 entrypoint = "server.js"
 
 [env]
